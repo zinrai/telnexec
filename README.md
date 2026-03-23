@@ -2,6 +2,14 @@
 
 A CLI tool that logs into a network device via Telnet and executes commands.
 
+## Motivation
+
+This tool was created to collect command output from multiple Telnet-only
+devices.
+
+Entering the username and password manually for each device was inconvenient
+when accessing dozens of hosts.
+
 ## Requirements
 
 `telnet` client installed on the system.
