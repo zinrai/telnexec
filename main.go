@@ -30,6 +30,7 @@ func main() {
 	sec := flag.Int("timeout", 15, "timeout in seconds")
 	var commands stringSlice
 	flag.Var(&commands, "command", "command to execute (can be specified multiple times)")
+	showVersion := flag.Bool("version", false, "Print version information and exit")
 
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: telnexec -host <ip> -user <username> -command <command> [-command <command> ...]\n\n")
@@ -42,6 +43,11 @@ func main() {
 		fmt.Fprintf(os.Stderr, "                 - set (including empty): sends the value on password prompt\n")
 	}
 	flag.Parse()
+
+	if *showVersion {
+		printVersion()
+		os.Exit(0)
+	}
 
 	if *ip == "" || *username == "" || len(commands) == 0 {
 		flag.Usage()
