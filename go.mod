@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/google/goexpect v0.0.0-20210430020637-ab937bf7fd6f
-	google.golang.org/grpc v1.82.1
+	google.golang.org/grpc v1.83.0
 )
 
 require (
